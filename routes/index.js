@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  res.render('index', { title: 'Express',name: 'Bob',age:18,gender:"男"});
+  let object = {login: false, title: 'deepLG',name: 'Bob',age:18};
+  res.render('index',object );
 });
 
 module.exports = router;
