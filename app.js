@@ -19,12 +19,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/public',express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.get('/index.html', function (req, res) {
+app.use('/', function (req, res) {
+  res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, "/index.html"));
 });
-app.post('/process_get', function (req, res) {
+app.use('/users', usersRouter);
+app.get('/index.html', function (req, res) {
+  res.setHeader('Content-Type', 'text/html');
+  res.sendFile(path.join(__dirname, "/index.html"));
+});
+app.post('/login', function (req, res) {
   req.setEncoding('utf8');
   // 输出 JSON 格式
   var response = {
@@ -32,9 +36,10 @@ app.post('/process_get', function (req, res) {
       "last_name":req.body.lastname,
       "country":req.body.country
   };
-  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+  
   console.log(response);
-  res.end(JSON.stringify(response));
+  // res.end(JSON.stringify(response));
+  // res.sendfile('index.html');
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
