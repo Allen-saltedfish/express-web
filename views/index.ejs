@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>温柔以待</title>
-    <meta charset="utf-8"> 
-    <link rel='stylesheet' href='../public/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-	<br>
-    <div>    
-      <form action="process_get" method="POST">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-  
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-  
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
+
+<head>
+  <title>温柔以待</title>
+  <meta charset="utf-8">
+  <link rel='stylesheet' href='../public/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+  <br>
+  <div>
+    <form action="index" method="POST">
+      <label for="name">昵称</label>
+      <input type="text" id="name" name="name" placeholder="昵称..">
+
+      <label for="contact">联系方式</label>
+      <input type="text" id="contact" name="contact" placeholder="(QQ/微信/邮箱)..">
+
+      <label for="gender">性别</label>
+      <select id="gender" name="gender">
+        <option value="man">男</option>
+        <option value="woman">女</option>
       </select>
-    
+
       <input type="submit" value="Submit">
     </form>
   </div>
-  </body>
+</body>
+
 </html>

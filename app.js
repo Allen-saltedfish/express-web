@@ -19,27 +19,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/public',express.static(path.join(__dirname, 'public')));
 
-app.use('/', function (req, res) {
-  res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, "/index.html"));
-});
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/index.html', function (req, res) {
-  res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, "/index.html"));
 });
-app.post('/login', function (req, res) {
+app.post('/index', function (req, res) {
   req.setEncoding('utf8');
   // 输出 JSON 格式
   var response = {
-      "first_name":req.body.firstname,
-      "last_name":req.body.lastname,
-      "country":req.body.country
+      "name":req.body.name,
+      "contact":req.body.contact,
+      "gender":req.body.gender
   };
-  
+  res.setHeader('Content-Type', 'text/html');
   console.log(response);
   // res.end(JSON.stringify(response));
-  // res.sendfile('index.html');
+  res.sendfile('index.html');
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

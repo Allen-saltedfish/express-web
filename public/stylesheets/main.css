@@ -302,6 +302,7 @@ h5, h6          { font-weight: bolder }
     /* height: 90%; */
     vertical-align: middle;
     overflow: hidden;
+    transition: all 0.6s;
 }
 
 .main .work .caption{
@@ -317,9 +318,9 @@ h5, h6          { font-weight: bolder }
 }
 
 
-.main .work a:hover .caption{
-    opacity: 1;
-    background: #af0ff0;
+.main .work a:hover .media{
+    /* opacity: 1; */
+    transform: scale(1.4);
 }
 
 
