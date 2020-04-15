@@ -1,0 +1,48 @@
+.progress-bar{
+    /* 进度条的槽 */
+    width:40%;
+    /* 设置进度条的高度 */
+    height: 5px;
+    /*进度条外层div的背景色，进度未达到的地方的颜色 */
+    background-color: #f9e1e3;
+    
+    border-radius: 3px;
+}
+.progress{
+/* 进度部分 */
+/* 利用继承父元素宽度的百分比控制进度 */
+width: 90%;
+height: 100%;
+/* 内层背景色即进度达到的颜色 */
+background-color: #03061483;
+border-radius: 3px;
+}
+.content ol li {
+float: left;
+width: 50%;
+}
+
+.content ol li:nth-child(even) {
+float: right;
+}
+.content {
+    height: 300px;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* text-align: center; */
+}
+.clearfix{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; 
+}

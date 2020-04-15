@@ -35,7 +35,10 @@ app.post('/index', function (req, res) {
   res.setHeader('Content-Type', 'text/html');
   console.log(response);
   // res.end(JSON.stringify(response));
-  res.sendfile('index.html');
+  res.sendfile(path.join(__dirname,'/index.html'));
+});
+app.use('/contact.html',function(req,res){
+  res.sendFile(path.join(__dirname, "/contact.html"));
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
