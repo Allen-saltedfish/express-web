@@ -1,3 +1,3 @@
 # express-web
 
-<a href="./temp.html">hello</a>
+<a href="./index.html">hello</a>
